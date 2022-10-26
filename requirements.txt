@@ -4,3 +4,4 @@ Flask-Restful
 flask-cors
 firebase-admin
 gunicorn
+python-dotenv
