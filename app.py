@@ -6,13 +6,13 @@ from firebase_admin import auth, credentials, firestore, initialize_app
 from flask import Flask, jsonify, request
 from flask_cors import CORS
 from flask_restful import Api, Resource
-from dotenv import load_dotenv
 
-load_dotenv()
+
+
 app = Flask(__name__)
 CORS(app)
 api = Api(app)
-cred = credentials.Certificate(json.loads(os.getenv("FIREBASE_CERT")))
+cred = credentials.Certificate('serviceAccount.json')
 fireapp = initialize_app(cred)
 firedb = firestore.client()
 
