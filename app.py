@@ -9,7 +9,7 @@ from flask_restful import Api, Resource
 app = Flask(__name__)
 CORS(app)
 api = Api(app)
-cred = credentials.Certificate(json.loads(os.environ['FIREBASE_CERT']))
+cred = credentials.Certificate('serviceAccount.json')
 fireapp = initialize_app(cred)
 firedb = firestore.client()
 
